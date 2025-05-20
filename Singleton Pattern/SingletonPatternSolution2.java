@@ -1,16 +1,20 @@
-// //eager Loading of object
+// //lazy loading of object
+
 // class JudgeAnalysis {
 //     private int runCount;
 //     private int submitCount;
+//     private static JudgeAnalysis judge;
 
-//     private static final JudgeAnalysis judge = new JudgeAnalysis();
 //     private JudgeAnalysis() {
 //         runCount = 0;
 //         submitCount = 0;
 //     }
 
-
 //     public static JudgeAnalysis getJudge() {
+//         if (judge == null) {
+//             judge = new JudgeAnalysis();
+//             return judge;
+//         }
 //         return judge;
 //     }
 
@@ -31,7 +35,7 @@
 //     }
 // }
 
-// public class SingletonPatternSolution1 {
+// public class SingletonPatternSolution2 {
 //     public static void main(String[] args) {
 //         JudgeAnalysis j1 = JudgeAnalysis.getJudge();
 //         JudgeAnalysis j2 = JudgeAnalysis.getJudge();
@@ -43,23 +47,19 @@
 
 //         System.out.println(j1);
 //         System.out.println(j2);
-
 //     }
 // }
 
 
 // /*
-//  in above code we have created a single instance of JudgeAnalysis class
-//     and we are using that instance to maintain the state of the class.
-//     So both j1 and j2 are pointing to the same instance of JudgeAnalysis class.
-//     So if we call runCode() method on j1, it will increment the runCount
-//     of the same instance and if we call runCode() method on j2, it will
-//     increment the runCount of the same instance.
+//  in above code problem is this is not thread safe multiple threads can
+//      create multiple instances of JudgeAnalysis class.
+//      So we need to make this thread safe.
+//      So we will use synchronized block to make this thread safe.
+//      But this will create a performance issue as every time we call getJudge()
+//      method, it will create a synchronized block and it will take time to
+//      create the object.
 
 
-//     ////////////////////////////////////////
-//     but problem with this is it unnecessarily creates the object 
-//     at the time of class loading even if it is not used in the application.
-//     This is not a good practice as it increases the memory footprint of the application.
-//     So we need to implement the lazy loading of object.
+//      so we will use double checked locking to make this thread safe.
 //  */
