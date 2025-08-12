@@ -14,5 +14,11 @@ public class PricingRule {
         this.ratePerDay=_ratePerDay;
         this.ratePerHour=_ratePerHour;
     }
+    public UUID getId(){
+        return this.id;
+    }
+    public Vehicle.VehicleType getVehicleType(){
+        return this.vehicleType;
+    }
     
 }

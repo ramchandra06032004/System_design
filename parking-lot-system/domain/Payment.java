@@ -25,4 +25,10 @@ public class Payment {
         this.paymentGetway=_PaymentGetway;
         this.paymentStatus=PaymentStatus.PENDING;
     }
+    public UUID getId(){
+        return this.id;
+    }
+    public UUID getTicketId(){
+        return this.ticketId;
+    }
 }

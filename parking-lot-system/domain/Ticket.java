@@ -17,4 +17,13 @@ public class Ticket {
         this.entryTime=LocalDateTime.now();
         this.isActive=true;
     }
+    public UUID getId(){
+        return this.id;
+    }
+    public boolean getIsActive(){
+        return this.isActive;
+    }
+    public void setActive(boolean status){
+        this.isActive=status;
+    }
 }
