@@ -10,7 +10,7 @@ public class Ticket {
     private LocalDateTime entryTime;
     private boolean isActive;
 
-    Ticket(UUID _vehicleId,UUID _slotId){
+    public Ticket(UUID _vehicleId,UUID _slotId){
         this.id=UUID.randomUUID();
         this.vehicleId=_vehicleId;
         this.slotId=_slotId;
@@ -25,5 +25,8 @@ public class Ticket {
     }
     public void setActive(boolean status){
         this.isActive=status;
+    }
+    public LocalDateTime getEntryTime(){
+        return this.getEntryTime();
     }
 }

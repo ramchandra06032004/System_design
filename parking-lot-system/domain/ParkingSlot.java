@@ -8,7 +8,7 @@ public class ParkingSlot {
     private int floor;
     private boolean isOccupied;
 
-    ParkingSlot(Vehicle.VehicleType _type,int _floor){
+    public ParkingSlot(Vehicle.VehicleType _type,int _floor){
         this.id=UUID.randomUUID();
         this.type=_type;
         this.floor=_floor;
