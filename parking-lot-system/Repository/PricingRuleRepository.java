@@ -14,7 +14,7 @@ public class PricingRuleRepository {
     Map<UUID,PricingRule> rules=new ConcurrentHashMap<>();
     Map<Vehicle.VehicleType,UUID> vehicleToRule=new ConcurrentHashMap<>();
 
-    public PricingRule same(PricingRule rule){
+    public PricingRule save(PricingRule rule){
         rules.put(rule.getId(), rule);
         vehicleToRule.put(rule.getVehicleType(), rule.getId());
         return rule;

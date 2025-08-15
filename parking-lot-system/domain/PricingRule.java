@@ -20,5 +20,11 @@ public class PricingRule {
     public Vehicle.VehicleType getVehicleType(){
         return this.vehicleType;
     }
-    
+    public double getRatePerHour() {
+        return ratePerHour;
+    }
+
+    public double getFlatRate() {
+        return ratePerDay;
+    }
 }
