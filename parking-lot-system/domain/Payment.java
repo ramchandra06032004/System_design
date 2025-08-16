@@ -18,7 +18,7 @@ public class Payment {
     private PaymentGetway paymentGetway;
     private PaymentStatus paymentStatus;
 
-    Payment(PaymentGetway _PaymentGetway,double _ammount,UUID _ticketId){
+    public Payment(PaymentGetway _PaymentGetway,double _ammount,UUID _ticketId){
         this.id=UUID.randomUUID();
         this.ticketId=_ticketId;
         this.ammount=_ammount;
@@ -30,5 +30,14 @@ public class Payment {
     }
     public UUID getTicketId(){
         return this.ticketId;
+    }
+    public void markAsSuccess(){
+        this.paymentStatus=PaymentStatus.SUCCESS;
+    }
+    public void markAsFailed(){
+        this.paymentStatus=PaymentStatus.FAILED;
+    }
+    public void markAsPending(){
+        this.paymentStatus=paymentStatus.PENDING;
     }
 }
